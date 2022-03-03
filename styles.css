@@ -66,7 +66,7 @@ img {
 }
 
 h1, h2 {
-    font-weight: 500; 
+    font-weight: 500;
     font-family: "Roboto Mono", sans-serif;
 }
 
@@ -85,7 +85,7 @@ p {
 
 table {
     text-align: left;
-    
+
 }
 
 .tests {
@@ -119,6 +119,10 @@ iframe {
     box-shadow: 1px 1px 5px lightslategray, 1px 1px 5px lightslategray;
     transition: box-shadow 0.2s;
 }
+.card-1, .card-3 {
+  grid-template-columns: 700px;
+}
+
 .card:hover {
     box-shadow: 4px 4px 5px rgb(254, 187,2), 1px 1px 5px rgb(254, 187,2);
 }
@@ -154,9 +158,9 @@ footer p {
 }
 
 @media (max-width: 1000px) {
-    
+
     .card {
-        grid-template-columns: 75vw;   
+        grid-template-columns: 75vw;
         width: 75vw;
     }
     .intro {
@@ -180,4 +184,3 @@ footer p {
         height: 40vw
     }
 }
-
