@@ -60,7 +60,7 @@ img {
 
 
 
-a {
+.intro a {
     text-decoration: none;
     color: inherit;
 }
@@ -77,9 +77,6 @@ h1, h2 {
     padding: 20px 0 50px;
 }
 
-h2 {
-    
-}
 
 p {
     text-align: justify;
@@ -101,6 +98,7 @@ table {
     margin: auto;
     padding: 50px 0;
 }
+
 
 iframe {
     border: solid rgb(0,53,128) 2px;
@@ -124,6 +122,14 @@ iframe {
 .card:hover {
     box-shadow: 4px 4px 5px rgb(254, 187,2), 1px 1px 5px rgb(254, 187,2);
 }
+.card a {
+    font-weight: bold;
+    color: rgb(0,53,128);
+}
+
+
+
+
 .card table {
     font-size: 20px;
 }
