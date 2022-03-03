@@ -156,8 +156,8 @@ footer p {
 @media (max-width: 1000px) {
     
     .card {
-        grid-template-columns: 80vw;   
-        width: 80vw;
+        grid-template-columns: 75vw;   
+        width: 75vw;
     }
     .intro {
         padding: 0 50px 30px;
