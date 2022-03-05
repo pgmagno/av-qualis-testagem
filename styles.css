@@ -119,7 +119,7 @@ iframe {
     box-shadow: 1px 1px 5px lightslategray, 1px 1px 5px lightslategray;
     transition: box-shadow 0.2s;
 }
-.card-1, .card-3 {
+.card-1 {
   grid-template-columns: 700px;
 }
 
