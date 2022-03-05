@@ -11,7 +11,7 @@ driver = webdriver.Firefox(executable_path='/usr/local/bin/geckodriver')
 driver.get("https://www.booking.com/taxi/index.pt-br.html")
 
 #1º caso de teste: Selecionar opção de retorno. A página inicial carrega apenas com a opção de ida.
-print('UC_001')
+print('UC_031')
 #Botão para habilitar opção de retorno (return)
 btn_return = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div/div/div/form/div[1]/fieldset/div/div[2]/label/span')
 #clicar no botão de retorno
@@ -20,7 +20,7 @@ btn_return.click()
 time.sleep(1)
 
 #2º caso de teste: Digitar local de retirada inválido e clicar no botão de pesquisar
-print('UC_002')
+print('UC_032')
 #campo para inserir local de retirada
 pickup_local = driver.find_element_by_xpath('//*[@id="pickupLocation"]')
 #botão pesquisar
@@ -35,7 +35,7 @@ btn_search.click()
 time.sleep(1)
 
 #3º caso de teste: Usar a função autocompletar para o campo local de retirada
-print('UC_003')
+print('UC_033')
 #limpar local de retirada
 pickup_local.clear()
 #digitar o local
@@ -54,7 +54,7 @@ btn_search.click()
 time.sleep(1)
 
 #4ºcaso de teste: digitar local de destino inválido
-print('UC_004')
+print('UC_034')
 #campo para inserir local de retirada
 destination_local = driver.find_element_by_xpath('//*[@id="dropoffLocation"]')
 #limpar local de destino
@@ -67,7 +67,7 @@ btn_search.click()
 time.sleep(1)
 
 #5º caso de teste: Usar a função autocompletar para o campo local de destino
-print('UC_005')
+print('UC_035')
 #limpar local de destino
 destination_local.clear()
 #digitar o local de destino
@@ -84,7 +84,7 @@ time.sleep(0.5)
 time.sleep(1)
 
 #6º caso de teste: Selecionar data de ida
-print('UC_006')
+print('UC_036')
 #campo para inserir data de retirada
 pickup_date = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div/div/div/form/div[2]/div[1]/div[2]/div/div/div[1]/div/button')
 #Clique para habilitar caledário
@@ -95,7 +95,7 @@ pickup_date_select_numb.send_keys(Keys.RETURN)
 time.sleep(1)
 
 #7º caso de teste: Selecionar horário de partida na retirada
-print('UC_007')
+print('UC_037')
 #campo para inserir horário de retirada
 pickup_time = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div/div/div/form/div[2]/div[1]/div[2]/div/div/div[2]/div/div[1]/div')
 #Clique para habilitar select de horário
@@ -113,13 +113,13 @@ btn_confirm.click()
 time.sleep(1)
 
 #8º caso de teste: Selecionar quantidade de passageiros
-print('UC_008')
+print('UC_038')
 passenger = Select(driver.find_element_by_xpath('//*[@id="passengers"]'))
 passenger.select_by_value('16')
 time.sleep(1)
 
 #9º caso de teste: Selecionar data de retorno
-print('UC_009')
+print('UC_039')
 #campo para inserir data de retorno
 return_date = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div/div/div/form/div[2]/undefined/div/div[2]/div/div/div[1]/div/button/span')
 #Clique para habilitar caledário
@@ -130,7 +130,7 @@ return_date_select_numb.send_keys(Keys.RETURN)
 time.sleep(1)
 
 #10º caso de teste: Selecionar horário de partida no retorno
-print('UC_010')
+print('UC_040')
 #campo para inserir horário de retirada
 return_time = driver.find_element_by_xpath('/html/body/div[2]/div/div/div[2]/div/div/div/div/div/form/div[2]/undefined/div/div[2]/div/div/div[2]/div/div[1]/div/button/span')
 #Clique para habilitar select de horário
