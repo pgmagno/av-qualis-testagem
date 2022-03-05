@@ -9,30 +9,30 @@ describe('Testa a barra de pesquisa do site Booking.com',() => {
         }
     })
 
-    it('CT-001 - testa a busca por hotéis quando não é inserido um destino',() => {
+    it('CT-011 - testa a busca por hotéis quando não é inserido um destino',() => {
         cy.get('.sb-searchbox__button').click();
         cy.contains("Por favor, insira um destino para começar a pesquisar.").should('exist');
     });
 
-    it('CT-002 - insere o destino "Rio de Janeiro" no campo de busca, não insere datas e clica em Pesquisar e vai para página de resultados',() => {
+    it('CT-012 - insere o destino "Rio de Janeiro" no campo de busca, não insere datas e clica em Pesquisar e vai para página de resultados',() => {
         let local = 'Rio de Janeiro';
         cy.get("#ss").type(local);
         cy.get('.sb-searchbox__button').click();
         cy.url().should('include','searchresults');
     });
 
-    it('CT-003 - insere o destino "Rio de Janeiro" no campo de busca, não insere datas e clica em Pesquisar',() => {
+    it('CT-013 - insere o destino "Rio de Janeiro" no campo de busca, não insere datas e clica em Pesquisar',() => {
         cy.get("#ss").type("Rio de Janeiro");
         cy.get('.sb-searchbox__button').click();
         cy.get("._b61fba663").should('exist');
     });
 
-    it('CT-004 - Pressiona a caixa de seleção de hóspedes',() => {
+    it('CT-014 - Pressiona a caixa de seleção de hóspedes',() => {
         cy.get("#xp__guests__toggle").click();
         cy.get("#xp__guests__inputs-container").should("be.visible");
     });
   
-    it('CT-005 - insere o destino "Rio de Janeiro", buscando uma data e clica em "Pesquisar"',() => {
+    it('CT-015 - insere o destino "Rio de Janeiro", buscando uma data e clica em "Pesquisar"',() => {
         let date = processDate(30);
         cy.get("#ss").type("Rio de Janeiro");
         cy.get(".xp__dates").click();
@@ -41,7 +41,7 @@ describe('Testa a barra de pesquisa do site Booking.com',() => {
         cy.get('[data-testid="price-and-discounted-price"]').should('exist');
     });
 
-    it('CT-006 - insere o destino "Rio de Janeiro", buscando uma data (1 dias antes) anterior ao dia de hoje e clica em "Pesquisar"',() => {
+    it('CT-016 - insere o destino "Rio de Janeiro", buscando uma data (1 dias antes) anterior ao dia de hoje e clica em "Pesquisar"',() => {
         let date = processDate(-1);
         cy.get("#ss").type("Rio de Janeiro");
         cy.get(".xp__dates").click();
@@ -50,13 +50,13 @@ describe('Testa a barra de pesquisa do site Booking.com',() => {
         cy.get('[data-testid="price-and-discounted-price"]').should('not.exist');
     });
    
-    it('CT-007 - Pressiona o "X" que aparece ao digitar algo no campo de busca',() => {
+    it('CT-017 - Pressiona o "X" que aparece ao digitar algo no campo de busca',() => {
         cy.get("#ss").type("Rio de Janeiro");
         cy.get('.sb-destination__clear > .bk-icon').click();
         cy.get("#ss").should('contain.text', '');
     });
 
-    it('CT-008 - Testa inserir um número de adultos menor do que 1',() => {
+    it('CT-018 - Testa inserir um número de adultos menor do que 1',() => {
         cy.get("#xp__guests__toggle").click();
         for (let i = 0; i < 5; i++) {
             cy.get(".sb-group__field-adults > .bui-stepper > .bui-stepper__wrapper > .bui-stepper__subtract-button").click();
@@ -64,7 +64,7 @@ describe('Testa a barra de pesquisa do site Booking.com',() => {
         cy.get('.sb-group__field-adults > .bui-stepper > .bui-stepper__wrapper > .bui-stepper__display').should('contain.text','1');
     });
 
-    it('CT-009 - Testa inserir um número de adultos maior do que 30',() => {
+    it('CT-019 - Testa inserir um número de adultos maior do que 30',() => {
         cy.get("#xp__guests__toggle").click();
         for (let i = 0; i < 35; i++) {
             cy.get(".sb-group__field-adults > .bui-stepper > .bui-stepper__wrapper > .bui-stepper__add-button").click();
@@ -72,7 +72,7 @@ describe('Testa a barra de pesquisa do site Booking.com',() => {
         cy.get('.sb-group__field-adults > .bui-stepper > .bui-stepper__wrapper > .bui-stepper__display').should('contain.text','30');
     });
 
-    it('CT-010 - Testa adicionar uma criança e o campo de idade',() => {
+    it('CT-020 - Testa adicionar uma criança e o campo de idade',() => {
         cy.get("#xp__guests__toggle").click();
         cy.get(".sb-group-children > .bui-stepper > .bui-stepper__wrapper > .bui-stepper__add-button").click();
         for (let i = 0; i < 13; i++) {
